@@ -15,25 +15,25 @@ The indices of an array start at zero.
 For example:
 
 ```javascript
-const numbers = [1, 'two', 3, 'four'];
-numbers[2];
+const numbers = [1, "two", 3, "four"]
+numbers[2]
 // => 3
 ```
 
 To retrieve the number of elements that are in an array, use the `length` property:
 
 ```javascript
-const numbers = [1, 'two', 3, 'four'];
-numbers.length;
+const numbers = [1, "two", 3, "four"]
+numbers.length
 // => 4
 ```
 
 To change an element in the array, you assign a value at the index:
 
 ```javascript
-const numbers = [1, 'two', 3, 'four'];
-numbers[0] = 'one';
-numbers;
+const numbers = [1, "two", 3, "four"]
+numbers[0] = "one"
+numbers
 // => ['one', 'two', 3, 'four']
 ```
 
@@ -47,9 +47,9 @@ Here are a few to consider when working on this exercise:
 > The `push()` method adds one or more elements to the end of an array and returns the new length of the array.[^1]
 
 ```javascript
-const numbers = [1, 'two', 3, 'four'];
-numbers.push(5); // => 5
-numbers;
+const numbers = [1, "two", 3, "four"]
+numbers.push(5) // => 5
+numbers
 // => [1, 'two', 3, 'four', 5]
 ```
 
@@ -59,9 +59,9 @@ numbers;
 > This method changes the length of the array.[^2]
 
 ```javascript
-const numbers = [1, 'two', 3, 'four'];
-numbers.pop(); // => four
-numbers;
+const numbers = [1, "two", 3, "four"]
+numbers.pop() // => four
+numbers
 // => [1, 'two', 3]
 ```
 
@@ -71,9 +71,9 @@ numbers;
 > This method changes the length of the array.[^3]
 
 ```javascript
-const numbers = [1, 'two', 3, 'four'];
-numbers.shift(); // => 1
-numbers;
+const numbers = [1, "two", 3, "four"]
+numbers.shift() // => 1
+numbers
 // => ['two', 3, 'four']
 ```
 
@@ -82,9 +82,9 @@ numbers;
 > The unshift() method adds one or more elements to the beginning of an array and returns the new length of the array.[^4]
 
 ```javascript
-const numbers = [1, 'two', 3, 'four'];
-numbers.unshift('one'); // => 5
-numbers;
+const numbers = [1, "two", 3, "four"]
+numbers.unshift("one") // => 5
+numbers
 // => ['one', 1, 'two', 3, 'four']
 ```
 
@@ -94,9 +94,9 @@ numbers;
 > This method returns an array containing the deleted elements.[^5]
 
 ```javascript
-const numbers = [1, 'two', 3, 'four'];
-numbers.splice(2, 1, 'one');
-numbers;
+const numbers = [1, "two", 3, "four"]
+numbers.splice(2, 1, "one")
+numbers
 // => [1, 'two', 'one', 'four']
 ```
 
@@ -112,13 +112,12 @@ numbers;
 
 ## Instructions
 
-As a magician-to-be, Elyse needs to practice some basics. She has
-a stack of cards that she wants to manipulate.
+As a magician-to-be, Elyse needs to practice some basics. She has a stack of cards that she wants to manipulate.
 
-To make things a bit easier she only uses the cards 1 to 10 so her
-stack of cards can be represented by an array of numbers. The position
-of a certain card corresponds to the index in the array. That means
-position 0 refers to the first card, position 1 to the second card
+To make things a bit easier she only uses the cards 1 to 10 so her stack of cards can be represented by an array of numbers. 1 --> 10 (pos 1(idx+1) to 10) (idx 0 to 9)
+
+The position of a certain card corresponds to the index in the array. _Position = index + 1_
+That means position 0 refers to the first card, position 1 to the second card
 etc.
 
 ## 1. Retrieve a card from a stack
@@ -127,21 +126,21 @@ In order to pick a card, return the card at index `position` from
 the given stack.
 
 ```javascript
-const position = 2;
-getItem([1, 2, 4, 1], position);
+const position = 2
+getItem([1, 2, 4, 1], position)
 // => 4
 ```
 
 ## 2. Exchange a card in the stack
 
-Perform some sleight of hand and exchange the card at index `position`
-with the new card provided.
+Perform some sleight of hand and exchange the card at index `position` with the new card provided.
+
 Return the adjusted stack.
 
 ```javascript
-const position = 2;
-const newCard = 6;
-setItem([1, 2, 4, 1], position, newCard);
+const position = 2
+const newCard = 6
+setItem([1, 2, 4, 1], position, newCard)
 // => [1, 2, 6, 1]
 ```
 
@@ -151,8 +150,8 @@ Make a card appear, by inserting a new card at the top of the stack.
 Return the adjusted stack.
 
 ```javascript
-const newCard = 8;
-insertItemAtTop([5, 9, 7, 1], newCard);
+const newCard = 8
+insertItemAtTop([5, 9, 7, 1], newCard)
 // => [5, 9, 7, 1, 8]
 ```
 
@@ -162,8 +161,8 @@ Make a card appear, by inserting a new card at the bottom of the stack.
 Return the adjusted stack.
 
 ```javascript
-const newCard = 8;
-insertItemAtBottom([5, 9, 7, 1], newCard);
+const newCard = 8
+insertItemAtBottom([5, 9, 7, 1], newCard)
 // => [8, 5, 9, 7, 1]
 ```
 
@@ -173,8 +172,8 @@ Make a card disappear by removing the card at the given `position` from the stac
 Return the adjusted stack.
 
 ```javascript
-const position = 2;
-removeItem([3, 2, 6, 4, 8], position);
+const position = 2
+removeItem([3, 2, 6, 4, 8], position)
 // => [3, 2, 4, 8]
 ```
 
@@ -184,7 +183,7 @@ Make a card disappear by removing the card at the top of the stack.
 Return the adjusted stack.
 
 ```javascript
-removeItemFromTop([3, 2, 6, 4, 8]);
+removeItemFromTop([3, 2, 6, 4, 8])
 // => [3, 2, 6, 4]
 ```
 
@@ -194,7 +193,7 @@ Make a card disappear by removing the card at the bottom of the stack.
 Return the adjusted stack.
 
 ```javascript
-removeItemAtBottom([8, 5, 9, 7, 1]);
+removeItemAtBottom([8, 5, 9, 7, 1])
 // => [5, 9, 7, 1]
 ```
 
@@ -203,8 +202,8 @@ removeItemAtBottom([8, 5, 9, 7, 1]);
 Check whether the size of the stack is equal to `stackSize` or not.
 
 ```javascript
-const stackSize = 4;
-checkSizeOfStack([3, 2, 6, 4, 8], stackSize);
+const stackSize = 4
+checkSizeOfStack([3, 2, 6, 4, 8], stackSize)
 // => false
 ```
 
