@@ -9,6 +9,7 @@ If you get stuck on the exercise, check out `HINTS.md`, but try and solve it wit
 ## While Loops
 
 With a while loop you can execute code repeatably as long as a certain condition is fulfilled.
+
 It is written with the `while` keyword followed by a condition wrapped in round brackets and a code block that contains the _body_ of the loop wrapped in curly brackets.
 
 ```javascript
@@ -29,6 +30,7 @@ do {
 ```
 
 Inside a loop body you can use the `break` keyword to stop the execution of the loop entirely.
+
 In contrast to this, the keyword `continue` only stops the execution of the current iteration and continues with the next one.
 With `continue` you can often avoid wrapping big parts of the loop body in an if-statement.
 
@@ -42,7 +44,7 @@ while (i < 100) {
     continue
   }
 
-  // The code here will only executed when i was not divisible
+  // The code here will only be executed when i was not divisible
   // by 3 in the check above.
 }
 ```
@@ -53,6 +55,7 @@ Besides the if-statement, JavaScript also has a switch-statement to conditionall
 It is used when a single variable needs to be compared to multiple variants.
 
 The comparison is done by checking for strict equality (`===`), see [concept comparison][concept-comparison].
+
 For some variable `x`, the switch statement in JavaScript has the following syntax.
 
 <!-- prettier-ignore-start -->
@@ -73,9 +76,11 @@ switch (x) {
 The `default` case is optional and used in case you want to execute some code if none of the other options match the variable.
 
 The `break` statements above are needed because by default all cases are "fallthrough" in JavaScript.
+
 That means without any `break` statement all the code in the cases below the first matching option would be executed even though `x` did not match those options.
 
 This "fallthrough by default" behavior is a common pitfall when using `switch` in JavaScript.
+
 Inside a function, `return` can also be used instead of `break` to avoid this problem.
 
 [concept-comparison]: /tracks/javascript/concepts/comparison
@@ -83,7 +88,9 @@ Inside a function, `return` can also be used instead of `break` to avoid this pr
 ## Instructions
 
 Your friend Li Mei runs her own juice bar where she sells delicious mixed fruit juices.
+
 You are a frequent customer in her shop and realized you could make your friend's life easier.
+
 You decide to use your coding skills to help Li Mei with her job.
 
 ## 1. Determine how long it takes to mix a juice
