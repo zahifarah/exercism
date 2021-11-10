@@ -1,3 +1,5 @@
+import { start } from "repl"
+
 /**
  * Calculates the total bird count.
  *
@@ -5,7 +7,11 @@
  * @returns {number} total bird count
  */
 export function totalBirdCount(birdsPerDay) {
-  throw new Error("Please implement the totalBirdCount function")
+  let sum = 0
+  for (let i = 0; i < birdsPerDay.length; i++) {
+    sum = sum + birdsPerDay[i]
+  }
+  return sum
 }
 
 /**
@@ -16,7 +22,23 @@ export function totalBirdCount(birdsPerDay) {
  * @returns {number} birds counted in the given week
  */
 export function birdsInWeek(birdsPerDay, week) {
-  throw new Error("Please implement the birdsInWeek function")
+  const startIdx = week * 7 - 7
+  const endIdx = week * 7
+
+  const weeklySlice = birdsPerDay.slice(startIdx, endIdx)
+
+  // ### FOR LOOP SOLUTION
+  // let weeklyBirds = 0
+  // for (let i = 0; i < weeklySlice.length; i++) {
+  //   weeklyBirds = weeklyBirds + weeklySlice[i]
+  // }
+
+  // ### REDUCE METHOD SOLUTION
+  let weeklyBirds = weeklySlice.reduce((previousValue, currentValue) => {
+    return previousValue + currentValue
+  }, 0)
+
+  return weeklyBirds
 }
 
 /**
@@ -27,5 +49,7 @@ export function birdsInWeek(birdsPerDay, week) {
  * @returns {number[]} corrected bird count data
  */
 export function fixBirdCountLog(birdsPerDay) {
-  throw new Error("Please implement the fixBirdCountLog function")
+  for (let i = 0; i < birdsPerDay.length; i += 2) birdsPerDay[i]++
+
+  return birdsPerDay
 }
