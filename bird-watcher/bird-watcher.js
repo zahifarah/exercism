@@ -1,5 +1,3 @@
-import { start } from "repl"
-
 /**
  * Calculates the total bird count.
  *
