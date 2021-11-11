@@ -44,9 +44,8 @@ function limesToCut(wedgesNeeded, limes) {
       }
       neededLimes++
     } else {
-      return neededLimes
+      break
     }
-    console.log(`${lime}`)
   }
 
   return neededLimes
