@@ -29,8 +29,8 @@ function limesToCut(wedgesNeeded, limes) {
   let availableWedges = 0
   let neededLimes = 0
 
-  for (const lime of limes) {
-    if (availableWedges < wedgesNeeded) {
+  while (availableWedges < wedgesNeeded) {
+    for (let lime of limes) {
       switch (lime) {
         case "small":
           availableWedges += 6
@@ -43,8 +43,6 @@ function limesToCut(wedgesNeeded, limes) {
           break
       }
       neededLimes++
-    } else {
-      break
     }
   }
 
