@@ -32,9 +32,9 @@ export function limesToCut(wedgesNeeded, limes) {
   let availableWedges = 0
   let neededLimes = 0
 
-  for (let i = 0; i < limes.length; i++) {
+  for (const lime of limes) {
     if (availableWedges < wedgesNeeded) {
-      switch (limes[i]) {
+      switch (lime) {
         case "small":
           availableWedges += 6
           break
@@ -46,6 +46,8 @@ export function limesToCut(wedgesNeeded, limes) {
           break
       }
       neededLimes++
+    } else {
+      break
     }
   }
 
