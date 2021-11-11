@@ -26,31 +26,35 @@ const zahiArr = [
 // total limes (length): 9
 
 function limesToCut(wedgesNeeded, limes) {
-  let availableWedges = 0
+  let wedgesAvailable = 0
   let neededLimes = 0
   let i = 0
 
-  while (availableWedges < wedgesNeeded) {
-    switch (limes[i]) {
-      case "small":
-        availableWedges += 6
-        break
-      case "medium":
-        availableWedges += 8
-        break
-      case "large":
-        availableWedges += 10
-        break
+  while (wedgesAvailable < wedgesNeeded) {
+    if (i < limes.length) {
+      switch (limes[i]) {
+        case "small":
+          wedgesAvailable += 6
+          break
+        case "medium":
+          wedgesAvailable += 8
+          break
+        case "large":
+          wedgesAvailable += 10
+          break
+      }
+      neededLimes++
+      i++
+    } else {
+      return limes.length
     }
-    neededLimes++
-    i++
   }
 
   return neededLimes
 }
 
 console.log(limesToCut(30, limesArr))
-// console.log(limesToCut(42, limesArr))
-// console.log(limesToCut(100, limesArr))
-// console.log(limesToCut(30, zahiArr))
-// console.log(limesToCut(30, zahiArr))
+console.log(limesToCut(42, limesArr))
+console.log(limesToCut(100, limesArr))
+console.log(limesToCut(30, zahiArr))
+console.log(limesToCut(30, zahiArr))
