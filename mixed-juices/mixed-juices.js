@@ -64,6 +64,39 @@ export function limesToCut(wedgesNeeded, limes) {
  * @returns {string[]} remaining orders after the time is up
  */
 export function remainingOrders(timeLeft, orders) {
-  // timeElapsed: time remaining after preparing each drink
-  //
+  let i = 0
+  let timeElapsed = 0
+
+  while (i < orders.length) {
+    if (timeLeft > 0) {
+      switch (orders[i]) {
+        case "Pure Strawberry Joy":
+          timeElapsed = 0.5
+          timeLeft -= timeElapsed
+          break
+        case "Energizer":
+        case "Green Garden":
+          timeElapsed = 1.5
+          timeLeft -= timeElapsed
+          break
+        case "Tropical Island":
+          timeElapsed = 3
+          timeLeft -= timeElapsed
+          break
+        case "All or Nothing":
+          timeElapsed = 5
+          timeLeft -= timeElapsed
+          break
+        default:
+          timeElapsed = 2.5
+          timeLeft -= timeElapsed
+          break
+      }
+      i++
+    } else {
+      return orders.length
+    }
+  }
+
+  return i
 }
