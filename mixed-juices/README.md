@@ -143,17 +143,27 @@ There are often drinks that have been ordered but are not prepared yet when Li M
 Dmitry will then prepare the remaining juices.
 
 To make the hand-over easier, implement a function `remainingOrders` which takes the number of minutes left in Li Mei's shift and an array of juices that have been ordered but not prepared yet.
+
 The function should return the orders that Li Mei cannot start preparing before the end of her work day.
 
 The time left in the shift will always be greater than 0.
+
 Furthermore the orders are prepared in the order in which they appear in the array.
+
 If Li Mei starts to mix a certain juice, she will always finish it even if she has to work a bit longer.
+
 If there are no remaining orders left that Dmitry needs to take care of, an empty array should be returned.
 
 ```javascript
 remainingOrders(5, ["Energizer", "All or Nothing", "Green Garden"])
 // => ['Green Garden']
 ```
+
+- `'Pure Strawberry Joy'` takes 0.5 minutes,
+- `'Energizer'` and `'Green Garden'` take 1.5 minutes each,
+- `'Tropical Island'` takes 3 minutes
+- `'All or Nothing'` takes 5 minutes.
+- For all other drinks (e.g., special offers) you can assume a preparation time of 2.5 minutes.
 
 ## Source
 
