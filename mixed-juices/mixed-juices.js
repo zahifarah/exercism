@@ -31,8 +31,8 @@ export function timeToMixJuice(name) {
 export function limesToCut(wedgesNeeded, limes) {
   let wedgesAvailable = 0
   let neededLimes = 0
-  let i = 0
 
+  let i = 0
   while (wedgesAvailable < wedgesNeeded) {
     if (i < limes.length) {
       switch (limes[i]) {
@@ -65,38 +65,26 @@ export function limesToCut(wedgesNeeded, limes) {
  */
 export function remainingOrders(timeLeft, orders) {
   let i = 0
-  let timeElapsed = 0
-
-  while (i < orders.length) {
-    if (timeLeft > 0) {
-      switch (orders[i]) {
-        case "Pure Strawberry Joy":
-          timeElapsed = 0.5
-          timeLeft -= timeElapsed
-          break
-        case "Energizer":
-        case "Green Garden":
-          timeElapsed = 1.5
-          timeLeft -= timeElapsed
-          break
-        case "Tropical Island":
-          timeElapsed = 3
-          timeLeft -= timeElapsed
-          break
-        case "All or Nothing":
-          timeElapsed = 5
-          timeLeft -= timeElapsed
-          break
-        default:
-          timeElapsed = 2.5
-          timeLeft -= timeElapsed
-          break
-      }
-      i++
-    } else {
-      return orders.length
+  while (i < orders.length && timeLeft > 0) {
+    switch (orders[i]) {
+      case "Pure Strawberry Joy":
+        timeLeft -= 0.5
+        break
+      case "Energizer":
+      case "Green Garden":
+        timeLeft -= 1.5
+        break
+      case "Tropical Island":
+        timeLeft -= 3
+        break
+      case "All or Nothing":
+        timeLeft -= 5
+        break
+      default:
+        timeLeft -= 2.5
+        break
     }
+    i = i + 1
   }
-
-  return i
+  return orders.slice(i)
 }
