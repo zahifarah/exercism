@@ -6,6 +6,12 @@ const someOrder = [
   "Pure Strawberry Joy",
 ]
 
+/*
+Current goal:
+Iterate over every element of orders, and for every iteration subtract from timeLeft the relevant number (depending on the case)
+Do the above as long as timeLeft > 0
+*/
+
 function remainingOrders(timeLeft, orders) {
   let i = 0
   let timeElapsed = 0
