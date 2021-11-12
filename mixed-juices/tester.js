@@ -46,7 +46,8 @@ function remainingOrders(timeLeft, orders) {
     console.log(timeLeft)
     console.log(timeElapsed)
     console.log(i) // 1, 2, 3, 4, 5 <-- no idea why this is returning 5? Which is greater than orders.length?
-    console.log(orders[i])
+    console.log(orders[i]) // <-- iterates over the first array up until undefined
+    // not behaving as expected, it's starting at index 1 and ending at orders.length instead of orders.length - 1
   }
 
   return i
