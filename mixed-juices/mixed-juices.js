@@ -71,3 +71,13 @@ export function remainingOrders(timeLeft, orders) {
   }
   return orders.slice(i)
 }
+
+// COMMUNITY SOLUTION
+// export function remainingOrders(timeLeft, orders) {
+//   // Community Solution
+//   while (timeLeft > 0) {
+//     timeLeft -= timeToMixJuice(orders[0])
+//     orders.shift()
+//   }
+//   return orders
+// }
