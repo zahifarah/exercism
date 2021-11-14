@@ -6,41 +6,30 @@ const someOrder = [
   "Pure Strawberry Joy",
 ]
 
-/*
-Current goal:
-Iterate over every element of orders, and for every iteration subtract from timeLeft the relevant number (depending on the case)
-Do the above as long as timeLeft > 0
-*/
-
-// array.slice(i + 1)
+function timeToMixJuice(name) {
+  switch (name) {
+    case "Pure Strawberry Joy":
+      return 0.5
+    case "Energizer":
+    case "Green Garden":
+      return 1.5
+    case "Tropical Island":
+      return 3
+    case "All or Nothing":
+      return 5
+    default:
+      return 2.5
+  }
+}
 
 function remainingOrders(timeLeft, orders) {
-  let timeElapsed = 0
-
   let i = 0
   while (i < orders.length && timeLeft > 0) {
-    switch (orders[i]) {
-      case "Pure Strawberry Joy":
-        timeElapsed = 0.5
-        break
-      case "Energizer":
-      case "Green Garden":
-        timeElapsed = 1.5
-        break
-      case "Tropical Island":
-        timeElapsed = 3
-        break
-      case "All or Nothing":
-        timeElapsed = 5
-        break
-      default:
-        timeElapsed = 2.5
-        break
-    }
-    timeLeft -= timeElapsed
+    timeLeft -= timeToMixJuice(orders[i])
     i = i + 1
   }
+
   return orders.slice(i)
 }
 
-console.log(remainingOrders(7, someOrder))
+console.log(remainingOrders(10, someOrder))

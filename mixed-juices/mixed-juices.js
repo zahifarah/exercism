@@ -66,24 +66,7 @@ export function limesToCut(wedgesNeeded, limes) {
 export function remainingOrders(timeLeft, orders) {
   let i = 0
   while (i < orders.length && timeLeft > 0) {
-    switch (orders[i]) {
-      case "Pure Strawberry Joy":
-        timeLeft -= 0.5
-        break
-      case "Energizer":
-      case "Green Garden":
-        timeLeft -= 1.5
-        break
-      case "Tropical Island":
-        timeLeft -= 3
-        break
-      case "All or Nothing":
-        timeLeft -= 5
-        break
-      default:
-        timeLeft -= 2.5
-        break
-    }
+    timeLeft -= timeToMixJuice(orders[i])
     i = i + 1
   }
   return orders.slice(i)
